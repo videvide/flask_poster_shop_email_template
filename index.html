@@ -10,10 +10,9 @@ xhtml1/DTD/xhtml1-transitional.dtd">
 body {
 margin: 0;
 padding: 0;
-/* background-color: #ececec; */
 }
 h1{
-    Margin: 0;
+Margin: 0;
 }
 table {
 border-spacing: 0;
@@ -47,39 +46,10 @@ text-align: center;
 padding-top: 40px;
 padding-bottom: 30px;
 }
-.order-details .column {
-width: 100%;
-max-width: 190px;
-display: inline-block;
-vertical-align: top;
-}
-.padding {
-padding: 15px;
-}
-.order-details .content {
-font-size: 15px;
-line-height: 20px;
-}
 a {
 text-decoration: none;
 color: #4a4a4a;
 font-size: 16px;
-}
-@media screen and (max-width: 600px) {
-img.third-img-last {
-width: 200px !important;
-max-width: 200px !important;
-}
-.padding {
-padding-right: 0 !important;
-padding-left: 0 !important;
-}
-}
-@media screen and (max-width: 400px) {
-img.third-img {
-width: 200px !important;
-max-width: 200px !important;
-}
 }
 </style>
 </head>
@@ -107,16 +77,36 @@ max-width: 200px !important;
                         <table width="100%" style="border-spacing: 0;">
                             <tr>
                                 <td class="order-details">
-                                    <h1>Order</h1>
-                                    <p>$(order_nr)</p>
-                                    <p>$(customer_name)</p>
-                                    <p>$(customer_shipping_line_1)</p>
-                                    <p>$(customer_shipping_line_2)</p>
-                                    <p>$(customer_shipping_zip)</p>
-                                    <p>$(customer_shipping_city)</p>
-                                    <p>$(customer_shipping_state)</p>
-                                    <p>$(customer_shipping_country)</p>
-                                    <p>$(stripe_order_nr)</p>
+                                    <h1 style="Margin-bottom: 5px;">Order</h1>
+                                    <medium>Order-nr: $(order_nr)</medium>
+                                    <table class="order-table" style="width:99%;border-collapse: collapse;border-spacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th><p>Produkt: </p></th>
+                                                <th><p>Format: </p></th>
+                                                <th><p>Papper: </p></th>
+                                                <th><p>Antal: </p></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>$(poster_name)</td>
+                                                <td>50x70cm</td>
+                                                <td>Canson Rag Photographique</td>
+                                                <td>$(quantity)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        <h3>Leverans info:</h3>
+                                        $(customer_name)<br>
+                                        $(customer_shipping_line_1)<br>
+                                        $(customer_shipping_line_2)<br>
+                                        $(customer_shipping_zip)<br>
+                                        $(customer_shipping_city)<br>
+                                        $(customer_shipping_state)<br>
+                                        $(customer_shipping_country)<br>
+                                        <h5 style="Margin-bottom: 0;">Stripe order-info:</h5>
+                                        <small>$(stripe_order_nr)</small>
                                 </td>
                             </tr>
                         </table>
